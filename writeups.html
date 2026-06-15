@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CTF Writeup Template — COBRA</title>
-<meta name="description" content="A standardized CTF writeup template covering recon, vulnerability analysis, exploitation, and remediation." />
+<title>CVE Write Ups — COBRA</title>
+<meta name="description" content="Curated index of CVE deep-dives authored by the COBRA research group." />
 <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
@@ -21,213 +21,53 @@
 
 <main class="container-narrow page-main">
 
-  <header class="page-header reveal">
-    <p class="page-eyebrow">&gt; CTF Writeup Template</p>
-    <h1 class="page-title">[Challenge Name] — [CTF Name]</h1>
-    <div class="meta">
-      <span>📅 [Date]</span>
-      <span>⏱ ~[XX] min read</span>
-      <span>🏷 [Category: Web / Pwn / Rev / Crypto / Forensics]</span>
-      <span class="tag" style="border-color:hsl(120 100% 40% / .5);color:var(--primary)">[Difficulty]</span>
-    </div>
-    <div class="tags" style="margin-top:.5rem">
-      <span class="tag">[Tag1]</span><span class="tag">[Tag2]</span><span class="tag">[Tag3]</span>
-    </div>
+  <header class="reveal">
+    <p class="page-eyebrow">&gt; CVE Write Ups</p>
+    <h1 class="page-title">Vulnerability Analyses</h1>
+    <p style="margin-top:.75rem;max-width:42rem;font-size:.875rem;color:var(--muted-foreground);line-height:1.7">
+      A curated index of CVE deep-dives authored by the COBRA research group. Each entry follows our standardized writeup template covering root cause, exploitation, impact, and mitigation.
+    </p>
+    <div class="divider-sm"></div>
   </header>
 
-  <div class="divider"></div>
+  <div id="cve-grid" class="cve-grid"></div>
 
-  <div class="toc reveal">
-    <h2>📑 Table of Contents</h2>
-    <ol>
-      <li><span class="num">1.</span> Overview</li>
-      <li><span class="num">2.</span> Reconnaissance</li>
-      <li><span class="num">3.</span> Vulnerability Analysis</li>
-      <li><span class="num">4.</span> Exploitation</li>
-      <li><span class="num">5.</span> Post-Exploitation / Flag Capture</li>
-      <li><span class="num">6.</span> Lessons Learned</li>
-      <li><span class="num">7.</span> Tools Used</li>
-      <li><span class="num">8.</span> References</li>
-    </ol>
-  </div>
-
-  <div class="sections">
-
-    <!-- 1 Overview -->
-    <section class="article-section reveal">
-      <h2><span class="num">01</span> Overview</h2>
-      <div class="rule"></div>
-      <div class="body">
-        <p>Provide a brief summary of the challenge. What is the objective? What category does it fall under? Include the challenge description as given by the CTF organizers.</p>
-        <div class="codeblock">
-          <div class="head">Challenge Description</div>
-<pre>Challenge: [Challenge Name]
-Points:    [XXX]
-Category:  [Web / Pwn / Rev / Crypto / Forensics / Misc]
-Solves:    [XX] teams
-
-Description:
-"[Paste the original challenge description here]"
-
-Files provided: [list any files, binaries, or URLs given]</pre>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2 Recon -->
-    <section class="article-section reveal">
-      <h2><span class="num">02</span> Reconnaissance</h2>
-      <div class="rule"></div>
-      <div class="body">
-        <p>Document your initial analysis. What did you observe first? What tools did you use for enumeration? Include scans, directory listings, source code review, etc.</p>
-        <div class="codeblock">
-          <div class="head">Initial Enumeration</div>
-<pre># Example: Web challenge recon
-$ curl -s http://target.ctf/ | head -20
-$ gobuster dir -u http://target.ctf -w /usr/share/wordlists/common.txt
-$ nmap -sV -sC target.ctf
-
-# Example: Binary challenge recon
-$ file challenge_binary
-$ checksec --file=challenge_binary
-$ strings challenge_binary | grep -i flag</pre>
-        </div>
-        <div class="note">Document every step, even dead ends. They help others learn and show your methodology.</div>
-      </div>
-    </section>
-
-    <!-- 3 Vuln Analysis -->
-    <section class="article-section reveal">
-      <h2><span class="num">03</span> Vulnerability Analysis</h2>
-      <div class="rule"></div>
-      <div class="body">
-        <p>What vulnerability did you identify? Explain the bug class (e.g., SQL injection, buffer overflow, insecure deserialization). Include relevant code snippets if source was available.</p>
-        <div class="codeblock">
-          <div class="head">Vulnerable Code / Behavior</div>
-<pre>// Example: Identified SQL injection in login endpoint
-// POST /api/login
-// Body: { "username": "admin' OR 1=1--", "password": "x" }
-
-// Example: Buffer overflow in binary
-// Input buffer is 64 bytes but read() accepts 256
-// Offset to RIP: 72 bytes</pre>
-        </div>
-        <ul class="checklist">
-          <li>Identify the vulnerability class (CWE if possible)</li>
-          <li>Explain WHY the vulnerability exists</li>
-          <li>Show the proof that the vulnerability is exploitable</li>
-          <li>Note any protections you need to bypass (ASLR, canaries, WAF, etc.)</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- 4 Exploitation -->
-    <section class="article-section reveal">
-      <h2><span class="num">04</span> Exploitation</h2>
-      <div class="rule"></div>
-      <div class="body">
-        <p>Walk through the exploit step by step. Include your exploit script/payload and explain each part. This is the core of the writeup.</p>
-        <div class="codeblock">
-          <div class="head">Exploit Script</div>
-<pre>#!/usr/bin/env python3
-"""
-Exploit for [Challenge Name] - [CTF Name]
-Author: [Your Handle]
-"""
-
-from pwn import *  # or requests, etc.
-
-# === Configuration ===
-TARGET = "[target address]"
-PORT   = [port]
-
-# === Step 1: [Describe what this does] ===
-# [Your exploit code here]
-
-# === Step 2: [Describe what this does] ===
-# [Your exploit code here]
-
-# === Step 3: Capture the flag ===
-# [Your exploit code here]
-
-print(f"[+] Flag: {flag}")</pre>
-        </div>
-        <div class="note warn">Always explain your payload. Don't just paste code — walk the reader through the logic so they can learn from it.</div>
-      </div>
-    </section>
-
-    <!-- 5 Flag -->
-    <section class="article-section reveal">
-      <h2><span class="num">05</span> Post-Exploitation / Flag Capture</h2>
-      <div class="rule"></div>
-      <div class="body">
-        <p>Show the successful flag capture. Include terminal output, screenshots, or proof of completion. If there were post-exploitation steps, document them.</p>
-        <div class="codeblock">
-          <div class="head">Flag</div>
-<pre>$ python3 exploit.py
-[+] Connected to target
-[+] Payload delivered
-[+] Flag: flag{PLACEHOLDER_REPLACE_WITH_ACTUAL_FLAG}
-
-# Or for web challenges:
-# Successfully accessed /admin/flag.txt
-# flag{PLACEHOLDER_REPLACE_WITH_ACTUAL_FLAG}</pre>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6 Lessons -->
-    <section class="article-section reveal">
-      <h2><span class="num">06</span> Lessons Learned</h2>
-      <div class="rule"></div>
-      <div class="body">
-        <ul class="checklist">
-          <li>What new technique or concept did you learn?</li>
-          <li>What would you do differently next time?</li>
-          <li>What similar challenges should you practice?</li>
-          <li>How does this vulnerability apply to real-world scenarios?</li>
-          <li>Any alternative solutions other teams used?</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- 7 Tools -->
-    <section class="article-section reveal">
-      <h2><span class="num">07</span> Tools Used</h2>
-      <div class="rule"></div>
-      <div class="body">
-        <div class="kv-grid">
-          <div class="kv"><div class="lbl">[Tool Name]</div><p>[What you used it for]</p></div>
-          <div class="kv"><div class="lbl">[Tool Name]</div><p>[What you used it for]</p></div>
-          <div class="kv"><div class="lbl">[Tool Name]</div><p>[What you used it for]</p></div>
-          <div class="kv"><div class="lbl">[Tool Name]</div><p>[What you used it for]</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 8 References -->
-    <section class="article-section reveal">
-      <h2><span class="num">08</span> References</h2>
-      <div class="rule"></div>
-      <div class="body">
-        <ul class="ref-list">
-          <li>[Link to CTF event page]</li>
-          <li>[Link to relevant CVE or vulnerability documentation]</li>
-          <li>[Link to similar writeups for comparison]</li>
-          <li>[Link to tool documentation used]</li>
-        </ul>
-      </div>
-    </section>
-
-  </div>
-
-  <div class="page-footer">
-    <p>Written by <span class="text-primary">[Author Handle]</span> · COBRA Research Group</p>
-    <a href="/" class="btn btn-primary" style="margin-top:1rem">← Back to Home</a>
+  <div class="contrib-box reveal">
+    <p class="page-eyebrow">&gt; Contributing</p>
+    <p style="margin-top:.75rem;font-size:.875rem;color:var(--muted-foreground)">
+      All CVE writeups follow the same structure. Use the <a href="/ctf-writeup/">writeup template</a> as a starting point and submit your draft for peer review.
+    </p>
   </div>
 </main>
 
+<script>
+const CVES = [
+  { id:"CVE-2024-3094",  title:"XZ Utils Backdoor — Supply Chain Compromise", date:"2024-03-29", severity:"Critical", cvss:"10.0", summary:"Malicious code inserted into liblzma (xz) enabling unauthorized SSH access on affected Linux distributions.", tags:["Supply Chain","Backdoor","SSH"] },
+  { id:"CVE-2024-21413", title:"Microsoft Outlook MonikerLink RCE",            date:"2024-02-13", severity:"Critical", cvss:"9.8",  summary:"Crafted email bypasses Protected View and leaks NTLM credentials or executes code via moniker links.", tags:["Outlook","NTLM","RCE"] },
+  { id:"CVE-2023-4863",  title:"libwebp Heap Buffer Overflow",                 date:"2023-09-11", severity:"Critical", cvss:"8.8",  summary:"Heap overflow in WebP image parsing affecting Chrome, Firefox, Electron, and many downstream apps.", tags:["Browser","Heap Overflow","0-day"] },
+  { id:"CVE-2022-22965", title:"Spring4Shell — Spring Framework RCE",          date:"2022-03-31", severity:"Critical", cvss:"9.8",  summary:"Class loader manipulation in Spring MVC enables remote code execution on JDK 9+ deployments.", tags:["Java","Spring","RCE"] },
+  { id:"CVE-2021-44228", title:"Log4Shell — Apache Log4j JNDI Injection",      date:"2021-12-10", severity:"Critical", cvss:"10.0", summary:"JNDI lookup in log messages allows unauthenticated attackers to achieve RCE on millions of services.", tags:["Log4j","JNDI","RCE"] },
+  { id:"CVE-2020-1472",  title:"Zerologon — Netlogon Privilege Escalation",    date:"2020-08-11", severity:"Critical", cvss:"10.0", summary:"Cryptographic flaw in MS-NRPC allows attackers to take over domain controllers in seconds.", tags:["Active Directory","Crypto","Privesc"] }
+];
+const sevClass = s => s === "Critical" ? "" : s === "High" ? "" : "";
+document.getElementById('cve-grid').innerHTML = CVES.map(c => `
+  <a href="/ctf-writeup/" class="cve-card reveal">
+    <div class="top">
+      <span class="id">⚠ ${c.id}</span>
+      <span class="tag" style="border-color:hsl(0 84% 60% / .5);color:var(--destructive)">${c.severity} · ${c.cvss}</span>
+    </div>
+    <h2>${c.title}</h2>
+    <p>${c.summary}</p>
+    <div class="tags">${c.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+    <div class="bottom">
+      <span>📅 ${c.date}</span>
+      <span class="read">Read writeup ↗</span>
+    </div>
+  </a>
+`).join('');
+</script>
 <script src="/script.js"></script>
 </body>
 </html>
+
 
