@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Research Report Template — COBRA</title>
+<meta name="description" content="A formal research report template covering abstract, methodology, findings, case studies, and mitigations." />
+<link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="/" class="back-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Back to Home
+    </a>
+    <a href="/" class="brand">COBRA</a>
+  </div>
+</nav>
+
+<main class="container-narrow page-main">
+
+  <header class="page-header reveal">
+    <p class="page-eyebrow">&gt; Research Report Template</p>
+    <h1 class="page-title">[Research Project Title]</h1>
+    <p style="margin-top:.75rem;font-size:.875rem;color:var(--muted-foreground);max-width:42rem">[One-line subtitle or thesis statement summarizing the research]</p>
+    <div class="meta">
+      <span>📅 [Publication Date]</span>
+      <span>👥 [Author(s)]</span>
+      <span>🏷 [Domain: Malware / Network / AppSec / etc.]</span>
+      <span class="tag" style="border-color:hsl(120 100% 40% / .5);color:var(--primary)">RPT-[ID]</span>
+    </div>
+  </header>
+
+  <div class="divider"></div>
+
+  <div class="toc reveal">
+    <h2>📑 Table of Contents</h2>
+    <ol>
+      <li><span class="num">1.</span> Abstract</li>
+      <li><span class="num">2.</span> Introduction &amp; Motivation</li>
+      <li><span class="num">3.</span> Threat Landscape / Background</li>
+      <li><span class="num">4.</span> Methodology</li>
+      <li><span class="num">5.</span> Findings &amp; Analysis</li>
+      <li><span class="num">6.</span> Case Studies / Proof of Concept</li>
+      <li><span class="num">7.</span> Mitigations &amp; Recommendations</li>
+      <li><span class="num">8.</span> Conclusion &amp; Future Work</li>
+      <li><span class="num">9.</span> Appendix &amp; References</li>
+    </ol>
+  </div>
+
+  <div class="sections">
+
+    <section class="article-section reveal">
+      <h2><span class="num">01</span> Abstract</h2><div class="rule"></div>
+      <div class="body">
+        <p>A concise summary (150–300 words) of the entire report. Cover the problem, approach, key findings, and significance. This should stand alone — a reader should understand the research scope without reading further.</p>
+        <div class="infobox"><div class="lbl">Writing Tip</div><p>Write the abstract LAST, after completing all other sections. It should answer: What? Why? How? What did you find? Why does it matter?</p></div>
+      </div>
+    </section>
+
+    <section class="article-section reveal">
+      <h2><span class="num">02</span> Introduction &amp; Motivation</h2><div class="rule"></div>
+      <div class="body">
+        <p>Set the stage for your research. Why is this topic important? What gap in knowledge or capability are you addressing?</p>
+        <ul class="checklist">
+          <li>Define the problem space clearly</li>
+          <li>State why this research matters NOW (recent incidents, emerging threats, etc.)</li>
+          <li>Outline your research questions or hypotheses</li>
+          <li>Briefly describe your approach</li>
+          <li>Preview your key findings</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="article-section reveal">
+      <h2><span class="num">03</span> Threat Landscape / Background</h2><div class="rule"></div>
+      <div class="body">
+        <p>Provide context. What does the reader need to know to understand your research? Cover relevant prior work, current threat actors, and existing defenses.</p>
+        <div class="codeblock"><div class="head">Outline</div>
+<pre>3.1 Historical Context
+    - Evolution of [threat/technology]
+    - Key incidents / milestones
+
+3.2 Current State
+    - Active threat actors &amp; TTPs (MITRE ATT&amp;CK mapping)
+    - Existing detection / defense mechanisms
+    - Known gaps and limitations
+
+3.3 Related Work
+    - Academic papers &amp; industry reports
+    - How your research extends or differs from prior work</pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-section reveal">
+      <h2><span class="num">04</span> Methodology</h2><div class="rule"></div>
+      <div class="body">
+        <p>Detail your research approach so others can replicate it. Be specific about tools, datasets, environment, and procedures.</p>
+        <div class="kv-grid">
+          <div class="kv"><div class="lbl">Research Type</div><p>[Empirical / Analytical / Experimental / Survey]</p></div>
+          <div class="kv"><div class="lbl">Environment</div><p>[Lab setup, OS versions, hardware specs]</p></div>
+          <div class="kv"><div class="lbl">Dataset</div><p>[Source, size, collection period, any sampling]</p></div>
+          <div class="kv"><div class="lbl">Tools &amp; Frameworks</div><p>[List primary tools with versions]</p></div>
+        </div>
+        <div class="codeblock"><div class="head">Procedure Steps</div>
+<pre>Step 1: [Data Collection / Sample Gathering]
+        - Describe sources and collection methods
+
+Step 2: [Analysis / Processing]
+        - Describe analytical techniques applied
+
+Step 3: [Testing / Validation]
+        - Describe how you validated results
+
+Step 4: [Documentation]
+        - How results were recorded and verified</pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-section reveal">
+      <h2><span class="num">05</span> Findings &amp; Analysis</h2><div class="rule"></div>
+      <div class="body">
+        <p>Present your results with data, evidence, and analysis. Use tables, charts, and code samples to support findings. Separate raw findings from your interpretation.</p>
+        <div class="codeblock"><div class="head">Findings Template</div>
+<pre>Finding #1: [Title]
+  Severity:    [Critical / High / Medium / Low / Informational]
+  Evidence:    [Data points, logs, screenshots]
+  Impact:      [What this means for defenders / attackers]
+  Confidence:  [High / Medium / Low]
+
+Finding #2: [Title]
+  ...
+
+Statistical Summary:
+  - [X]% of samples exhibited [behavior]
+  - [Metric] increased by [X]% compared to baseline
+  - [Other quantitative results]</pre>
+        </div>
+        <div class="note">Always distinguish between correlation and causation. Be transparent about limitations in your data or methodology.</div>
+      </div>
+    </section>
+
+    <section class="article-section reveal">
+      <h2><span class="num">06</span> Case Studies / Proof of Concept</h2><div class="rule"></div>
+      <div class="body">
+        <p>Provide concrete examples that demonstrate your findings. Each case study should follow a consistent format.</p>
+        <div class="codeblock"><div class="head">Case Study Format</div>
+<pre>=== Case Study [#]: [Descriptive Title] ===
+
+Background:
+  [Context for this specific example]
+
+Setup:
+  [Environment, configuration, preconditions]
+
+Execution:
+  [Step-by-step walkthrough with evidence]
+
+Results:
+  [What happened, with supporting data]
+
+Analysis:
+  [How this supports your broader findings]</pre>
+        </div>
+        <div class="note warn">If including exploit PoCs, follow responsible disclosure. Redact sensitive information and include appropriate warnings.</div>
+      </div>
+    </section>
+
+    <section class="article-section reveal">
+      <h2><span class="num">07</span> Mitigations &amp; Recommendations</h2><div class="rule"></div>
+      <div class="body">
+        <p>Provide actionable recommendations organized by audience and priority.</p>
+        <div class="priority-list">
+          <div class="row critical"><span class="lbl">Critical</span><p>[Immediate actions to address highest-risk findings]</p></div>
+          <div class="row high"><span class="lbl">High</span><p>[Important changes for near-term implementation]</p></div>
+          <div class="row"><span class="lbl">Medium</span><p>[Best-practice improvements to adopt over time]</p></div>
+          <div class="row"><span class="lbl">Low</span><p>[Long-term strategic enhancements]</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-section reveal">
+      <h2><span class="num">08</span> Conclusion &amp; Future Work</h2><div class="rule"></div>
+      <div class="body">
+        <ul class="checklist">
+          <li>Summarize key findings and their significance</li>
+          <li>Restate the problem and how your research addresses it</li>
+          <li>Acknowledge limitations honestly</li>
+          <li>Propose specific directions for future research</li>
+          <li>Include a call to action for the community</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="article-section reveal">
+      <h2><span class="num">09</span> Appendix &amp; References</h2><div class="rule"></div>
+      <div class="body">
+        <p>Include supplementary material: raw data tables, full configuration files, extended code samples, and a complete bibliography.</p>
+        <div class="codeblock"><div class="head">Reference Format</div>
+<pre>[1] Author(s). "Title." Publication/Source, Year. URL
+[2] Author(s). "Title." Publication/Source, Year. URL
+[3] CVE-YYYY-XXXXX — [Brief description]. NIST NVD.
+[4] MITRE ATT&amp;CK — [Technique ID]: [Technique Name]</pre>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="page-footer">
+    <p>COBRA Research Group · Report ID: <span class="text-primary">RPT-[XXX]</span> · Classification: <span class="text-primary">[PUBLIC / TLP:CLEAR]</span></p>
+    <a href="/" class="btn btn-primary" style="margin-top:1rem">← Back to Home</a>
+  </div>
+</main>
+
+<script src="/script.js"></script>
+</body>
+</html>
