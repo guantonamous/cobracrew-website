@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>CTF Reports — COBRA</title>
+<meta name="description" content="Index of CTF challenge writeups by the COBRA research group."/>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">COBRA</a>
+    <button class="hamburger" aria-label="Menu">≡</button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/writeups/">CVE Writeups</a></li>
+      <li><a href="/ctf-writeups/">CTF Reports</a></li>
+      <li><a href="/research-reports/">Research</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="container page">
+  <div class="reveal">
+    <p class="page-eyebrow">&gt; ctf reports</p>
+    <h1 class="page-title">CTF Writeups</h1>
+    <p class="page-lede">Walkthroughs from CTF competitions COBRA has played. Each report follows the standard CTF writeup template — recon, vuln analysis, exploit, and lessons learned.</p>
+    <div class="page-divider"></div>
+  </div>
+
+  <div class="grid grid-2" data-paginate="6" style="margin-top:3rem">
+
+    <a class="card reveal" data-item href="/ctf-writeup/">
+      <div class="card-meta"><span>PicoCTF · Web</span><span class="badge easy">Easy</span></div>
+      <h3>Cookies — Session Forgery 101</h3>
+      <p>Forging a base64-encoded session cookie to escalate from guest to admin and read the flag.</p>
+      <div><span class="tag">Web</span><span class="tag">Cookies</span><span class="tag">Auth</span></div>
+      <div class="card-footer"><span>2025-04-12</span><span class="read">Read writeup →</span></div>
+    </a>
+
+    <a class="card reveal" data-item href="/ctf-writeup/">
+      <div class="card-meta"><span>HTB · Pwn</span><span class="badge med">Medium</span></div>
+      <h3>RopMe — Classic ret2libc</h3>
+      <p>Leaking libc base via puts, then returning into system("/bin/sh") on a non-PIE 64-bit binary.</p>
+      <div><span class="tag">Pwn</span><span class="tag">ROP</span><span class="tag">x86_64</span></div>
+      <div class="card-footer"><span>2025-03-02</span><span class="read">Read writeup →</span></div>
+    </a>
+
+    <a class="card reveal" data-item href="/ctf-writeup/">
+      <div class="card-meta"><span>UIUCTF · Crypto</span><span class="badge hard">Hard</span></div>
+      <h3>RSA Common Modulus Attack</h3>
+      <p>Two ciphertexts sharing a modulus with coprime exponents — recovering the plaintext via extended Euclidean.</p>
+      <div><span class="tag">Crypto</span><span class="tag">RSA</span><span class="tag">Math</span></div>
+      <div class="card-footer"><span>2025-02-18</span><span class="read">Read writeup →</span></div>
+    </a>
+
+    <a class="card reveal" data-item href="/ctf-writeup/">
+      <div class="card-meta"><span>DefCon Quals · Rev</span><span class="badge hard">Hard</span></div>
+      <h3>VM-in-a-VM — Custom Bytecode</h3>
+      <p>Reversing a hand-rolled virtual machine, recovering the opcode table, and writing a disassembler.</p>
+      <div><span class="tag">Reverse</span><span class="tag">VM</span><span class="tag">Disasm</span></div>
+      <div class="card-footer"><span>2024-11-20</span><span class="read">Read writeup →</span></div>
+    </a>
+
+    <a class="card reveal" data-item href="/ctf-writeup/">
+      <div class="card-meta"><span>Google CTF · Forensics</span><span class="badge med">Medium</span></div>
+      <h3>Memdump — Volatility Triage</h3>
+      <p>Carving a flag out of a Windows memory dump using volatility plugins and YARA rules.</p>
+      <div><span class="tag">Forensics</span><span class="tag">Memory</span><span class="tag">Volatility</span></div>
+      <div class="card-footer"><span>2024-10-05</span><span class="read">Read writeup →</span></div>
+    </a>
+
+    <a class="card reveal" data-item href="/ctf-writeup/">
+      <div class="card-meta"><span>SekaiCTF · Misc</span><span class="badge easy">Easy</span></div>
+      <h3>Misc/QR — Recovering a Damaged QR</h3>
+      <p>Reconstructing missing finder patterns and decoding a partially corrupted QR by hand.</p>
+      <div><span class="tag">Misc</span><span class="tag">QR</span><span class="tag">Encoding</span></div>
+      <div class="card-footer"><span>2024-09-14</span><span class="read">Read writeup →</span></div>
+    </a>
+
+  </div>
+
+  <div class="toc" style="margin-top:3rem">
+    <h2>&gt; Contributing</h2>
+    <p style="margin-top:.5rem;color:var(--muted);font-size:.88rem">
+      Use the <a href="/ctf-writeup/" style="color:var(--primary)">CTF writeup template</a> to draft a new report,
+      then open a PR for review.
+    </p>
+  </div>
+</main>
+
+<footer class="footer"><p>// <span class="primary">COBRA</span> · cybersecurity research group</p></footer>
+<script src="/script.js"></script>
+</body>
+</html>

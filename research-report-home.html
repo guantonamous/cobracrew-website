@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Research Reports — COBRA</title>
+<meta name="description" content="Original research papers by the COBRA cybersecurity research group."/>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">COBRA</a>
+    <button class="hamburger" aria-label="Menu">≡</button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/writeups/">CVE Writeups</a></li>
+      <li><a href="/ctf-writeups/">CTF Reports</a></li>
+      <li><a href="/research-reports/">Research</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="container page">
+  <div class="reveal">
+    <p class="page-eyebrow">&gt; research</p>
+    <h1 class="page-title">Research Reports</h1>
+    <p class="page-lede">Formal write-ups on novel attack techniques, tool releases, and defensive analyses. Each entry follows the COBRA research report template.</p>
+    <div class="page-divider"></div>
+  </div>
+
+  <div class="grid grid-2" data-paginate="6" style="margin-top:3rem">
+
+    <a class="card reveal" data-item href="/research-report/">
+      <div class="card-meta"><span>Paper · 2025</span><span class="badge high">Original</span></div>
+      <h3>Cache-Timing Side Channels in Edge Runtimes</h3>
+      <p>Measuring exploitable timing oracles in serverless edge platforms and proposing mitigation strategies.</p>
+      <div><span class="tag">Side Channel</span><span class="tag">Edge</span><span class="tag">Timing</span></div>
+      <div class="card-footer"><span>2025-05-08</span><span class="read">Read report →</span></div>
+    </a>
+
+    <a class="card reveal" data-item href="/research-report/">
+      <div class="card-meta"><span>Paper · 2025</span><span class="badge high">Original</span></div>
+      <h3>Prompt Injection Taxonomy for LLM Agents</h3>
+      <p>A classification of injection vectors against tool-using LLM agents, with empirical attack success rates.</p>
+      <div><span class="tag">LLM</span><span class="tag">Prompt Injection</span><span class="tag">Agents</span></div>
+      <div class="card-footer"><span>2025-02-22</span><span class="read">Read report →</span></div>
+    </a>
+
+    <a class="card reveal" data-item href="/research-report/">
+      <div class="card-meta"><span>Tool · 2024</span><span class="badge high">Release</span></div>
+      <h3>libfuzz-rs: Coverage-Guided Fuzzing for Rust FFI</h3>
+      <p>Architecture and benchmarks of a coverage-guided fuzzer targeting unsafe Rust FFI boundaries.</p>
+      <div><span class="tag">Fuzzing</span><span class="tag">Rust</span><span class="tag">FFI</span></div>
+      <div class="card-footer"><span>2024-12-01</span><span class="read">Read report →</span></div>
+    </a>
+
+    <a class="card reveal" data-item href="/research-report/">
+      <div class="card-meta"><span>Paper · 2024</span><span class="badge high">Original</span></div>
+      <h3>Bypassing CFI on Modern ARM64 Kernels</h3>
+      <p>Practical techniques for defeating Clang CFI in production ARM64 kernel exploits.</p>
+      <div><span class="tag">Kernel</span><span class="tag">ARM64</span><span class="tag">CFI</span></div>
+      <div class="card-footer"><span>2024-08-19</span><span class="read">Read report →</span></div>
+    </a>
+
+    <a class="card reveal" data-item href="/research-report/">
+      <div class="card-meta"><span>Paper · 2024</span><span class="badge med">Defensive</span></div>
+      <h3>Detecting Living-off-the-Land Binaries with eBPF</h3>
+      <p>Telemetry-driven detection of LOLBin abuse across Linux servers using lightweight eBPF probes.</p>
+      <div><span class="tag">Defense</span><span class="tag">eBPF</span><span class="tag">LOLBin</span></div>
+      <div class="card-footer"><span>2024-05-30</span><span class="read">Read report →</span></div>
+    </a>
+
+    <a class="card reveal" data-item href="/research-report/">
+      <div class="card-meta"><span>Paper · 2023</span><span class="badge high">Original</span></div>
+      <h3>Speculative Decoding Oracles in Inference Servers</h3>
+      <p>Demonstrating practical information leaks via speculative decoding on multi-tenant LLM inference.</p>
+      <div><span class="tag">ML</span><span class="tag">Side Channel</span><span class="tag">Inference</span></div>
+      <div class="card-footer"><span>2023-11-14</span><span class="read">Read report →</span></div>
+    </a>
+
+  </div>
+
+  <div class="toc" style="margin-top:3rem">
+    <h2>&gt; Contributing</h2>
+    <p style="margin-top:.5rem;color:var(--muted);font-size:.88rem">
+      Use the <a href="/research-report/" style="color:var(--primary)">research report template</a>
+      to structure your submission. Drafts are reviewed by two COBRA researchers before publication.
+    </p>
+  </div>
+</main>
+
+<footer class="footer"><p>// <span class="primary">COBRA</span> · cybersecurity research group</p></footer>
+<script src="/script.js"></script>
+</body>
+</html>
