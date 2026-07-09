@@ -7,8 +7,40 @@
 <meta name="description" content="Original research papers by the COBRA cybersecurity research group."/>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="sillystyles3.css"/>
+
+<style>
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    border-bottom: 1px solid var(--border);
+    background: hsl(120 5% 4% / 0.9);
+    backdrop-filter: blur(12px);
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.5rem; max-width: 1200px; margin: 0 auto; }
+  .nav-logo { font-family: 'Orbitron', sans-serif; font-size: 1.25rem; font-weight: 700; letter-spacing: 0.15em; color: var(--primary); background: none; border: none; cursor: pointer; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--primary); }
+</style>
+
 </head>
 <body>
+
+<nav>
+  <div class="nav-inner">
+    <button class="nav-logo text-glow" onclick="window.scrollTo({top:0,behavior:'smooth'})">COBRA</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cve-writeup-home.html">CVE-Write Ups</a></li>
+      <li><a href="ctf-writeup-home.html">CTF-Write Ups</a></li>
+      <li><a href="research-report-home.html">Research Reports</a></li>
+      <li><a href="index.html#about-us">About Us</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+
+</nav> 
+
+<!--
 <nav class="nav">
   <div class="nav-inner">
     <a href="/" class="nav-brand">COBRA</a>
@@ -21,6 +53,8 @@
     </ul>
   </div>
 </nav>
+
+  -->
 
 <main class="container page">
   <div class="reveal">
