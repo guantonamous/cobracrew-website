@@ -416,6 +416,10 @@
   </footer>
 
   <script>
+
+    if (/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)) {
+      window.location.href = "mobile.html";
+    }
     function closeMobile() { document.getElementById('mobile-menu').classList.remove('open'); }
 
     // Projects data
