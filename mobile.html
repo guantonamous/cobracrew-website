@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Desktop Required</title>
+<title>COBRA | Desktop Recommended</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Orbitron:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -14,123 +14,216 @@
     box-sizing:border-box;
 }
 
+:root{
+    --bg:hsl(120 5% 4%);
+    --card:hsl(120 5% 7%);
+    --border:hsl(120 15% 18%);
+    --primary:hsl(120 100% 40%);
+    --text:hsl(120 10% 85%);
+    --muted:hsl(120 5% 55%);
+}
+
 body{
-    font-family:'Poppins',sans-serif;
-    background:linear-gradient(135deg,#0f172a,#1e293b,#111827);
-    color:#fff;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
+    font-family:'JetBrains Mono', monospace;
+    background:var(--bg);
+    color:var(--text);
     overflow:hidden;
 }
 
-/* Animated background */
 body::before{
     content:"";
-    position:absolute;
-    width:500px;
-    height:500px;
-    background:#3b82f6;
-    border-radius:50%;
-    filter:blur(180px);
-    top:-150px;
-    left:-150px;
-    opacity:.35;
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(circle at center,
+        rgba(0,255,0,.12) 0%,
+        transparent 60%),
+        repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,255,0,.03) 2px,
+        rgba(0,255,0,.03) 4px);
+    pointer-events:none;
 }
 
-body::after{
-    content:"";
-    position:absolute;
-    width:450px;
-    height:450px;
-    background:#9333ea;
-    border-radius:50%;
-    filter:blur(180px);
-    bottom:-150px;
-    right:-150px;
-    opacity:.3;
+.container{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
 }
 
 .card{
-    position:relative;
-    z-index:2;
-    width:90%;
-    max-width:520px;
-    padding:50px 40px;
+    width:100%;
+    max-width:420px;
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:35px 28px;
     text-align:center;
-
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,.15);
-    border-radius:24px;
-
-    box-shadow:0 25px 60px rgba(0,0,0,.45);
-
-    animation:fadeIn .8s ease;
+    box-shadow:
+        0 0 20px rgba(0,255,0,.08),
+        inset 0 0 20px rgba(0,255,0,.03);
 }
 
-.icon{
-    font-size:70px;
-    margin-bottom:20px;
+.logo{
+    width:90px;
+    height:90px;
+    margin:0 auto 25px;
+    border:1px solid rgba(0,255,0,.3);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:rgba(0,255,0,.05);
+    animation:pulse 2s infinite;
+}
+
+.logo img{
+    width:70px;
+}
+
+@keyframes pulse{
+    0%,100%{
+        box-shadow:0 0 10px rgba(0,255,0,.2);
+    }
+    50%{
+        box-shadow:0 0 25px rgba(0,255,0,.45);
+    }
 }
 
 h1{
-    font-size:2rem;
-    margin-bottom:15px;
-    font-weight:700;
+    font-family:'Orbitron', sans-serif;
+    color:var(--primary);
+    letter-spacing:5px;
+    font-size:2.2rem;
+    text-shadow:
+        0 0 12px rgba(0,255,0,.6),
+        0 0 35px rgba(0,255,0,.25);
+}
+
+.divider{
+    width:90px;
+    height:1px;
+    background:rgba(0,255,0,.45);
+    margin:18px auto 25px;
+}
+
+h2{
+    font-family:'Orbitron', sans-serif;
+    font-size:.95rem;
+    letter-spacing:2px;
+    margin-bottom:18px;
+    text-transform:uppercase;
 }
 
 p{
-    color:#d1d5db;
-    font-size:1rem;
-    line-height:1.7;
-    margin-bottom:35px;
+    color:var(--muted);
+    font-size:.85rem;
+    line-height:1.8;
 }
 
-.button{
-    display:inline-block;
+.notice{
+    margin-top:25px;
+    padding:15px;
+    border:1px solid rgba(0,255,0,.18);
+    background:rgba(0,255,0,.04);
+    font-size:.75rem;
+}
+
+.buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:30px;
+}
+
+button,
+a{
     text-decoration:none;
-    padding:14px 30px;
-    border-radius:50px;
-    background:linear-gradient(90deg,#3b82f6,#6366f1);
-    color:white;
-    font-weight:600;
-    transition:.3s;
+    display:block;
+    width:100%;
+    padding:14px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:.82rem;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    cursor:pointer;
+    transition:.25s;
 }
 
-.button:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 30px rgba(59,130,246,.45);
+.primary{
+    border:1px solid var(--primary);
+    background:rgba(0,255,0,.08);
+    color:var(--primary);
 }
 
-@keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translateY(25px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+.primary:hover{
+    background:var(--primary);
+    color:#000;
+}
+
+.secondary{
+    border:1px solid var(--border);
+    color:var(--text);
+}
+
+.secondary:hover{
+    border-color:var(--primary);
+    color:var(--primary);
+}
+
+.footer{
+    margin-top:30px;
+    color:#4f6d4f;
+    font-size:.7rem;
 }
 </style>
 </head>
 
 <body>
 
+<div class="container">
+
 <div class="card">
 
-    <div class="icon">🖥️</div>
+<div class="logo">
+    <!-- Replace with your logo -->
+    <img src="hero.png" alt="COBRA">
+</div>
 
-    <h1>Desktop Required</h1>
+<h1>COBRA</h1>
 
-    <p>
-        This website is currently optimized for desktop and laptop computers.
-        Please open it from a larger screen to access all features.
-    </p>
+<div class="divider"></div>
 
-    <a href="javascript:history.back()" class="button">Go Back</a>
+<h2>Desktop Experience Recommended</h2>
+
+<p>
+COBRA was designed for larger displays to provide the best experience when
+reading research reports, exploit write-ups, and cybersecurity analyses.
+</p>
+
+<div class="notice">
+For the best viewing experience, please open this website on a desktop or laptop computer.
+</div>
+
+<div class="buttons">
+
+<a href="index.html" class="primary">
+Continue Anyway
+</a>
+
+<a href="javascript:history.back()" class="secondary">
+Go Back
+</a>
+
+</div>
+
+<div class="footer">
+Cyber Operations & Breach Research Agency
+</div>
+
+</div>
 
 </div>
 
